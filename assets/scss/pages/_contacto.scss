@@ -1,0 +1,52 @@
+.main-contacto {
+    display: flex;
+    justify-content: space-between;
+    background-color: $secondary-color;
+    min-height: 800px;
+    padding-top: 20px;
+}
+
+.contact-form {
+    padding: 50px;
+    background-color: $primary-color;
+    color: $text-color;
+    font-family: $font-main;
+    font-size: 20px;
+
+    h4 {
+        font-family: $font-titles;
+        font-size: 40px;
+        padding-bottom: 20px;
+    }
+
+    .contact-line {
+        margin: 10px 0;
+    }
+
+    input {
+        padding: 10px 100px;
+    }
+
+    textarea {
+        padding: 10px 114px;
+    }
+
+    button {
+        display: inline-block;
+        background: linear-gradient(225deg, hsla(132, 100%, 47%, 1) 31%, hsla(129, 99%, 29%, 1) 81%);
+        font-family: $font-titles;
+        font-size: 30px;
+        color: $text-color;
+        border: none;
+        padding: 10px 50px;
+        border-radius: 5px;
+        margin: 0 30px;
+    }
+}
+
+iframe {
+    margin-right: 50px;
+    width: 1000px;
+    height: 659px;
+    border: none;
+}

@@ -1,0 +1,41 @@
+.navbar {
+    background-color: $primary-color;
+    color: $text-color;
+    padding: 1rem 0;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+  
+.logo img {
+    width: 120px;
+    height: auto;
+    display: block;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+
+    a {
+        font-family: $font-main;
+        font-weight: 500;
+        font-size: 18px;
+        transition: opacity 0.3s ease;
+
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+}

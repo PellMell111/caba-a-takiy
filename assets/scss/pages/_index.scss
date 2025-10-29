@@ -1,0 +1,93 @@
+.index-front {
+    height: 70vh;
+    background-image: url('../../media/imgs/frontImage.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 2rem;
+
+    .index-front-image {
+        width: 100%;
+        text-align: right;
+    }
+
+    .index-front-slogan {
+        font-family: $font-titles;
+        font-size: 2.5rem;
+        color: $text-color;
+        text-shadow: 0 0 20px rgba(0, 0, 0, 1);
+        margin: 0;
+    }
+
+    @media (max-width: 768px) {
+        background-attachment: scroll;
+        height: 70vh;
+    }
+}
+
+.index-presentation {
+    background-color: $secondary-color;
+    margin-top: 100px;
+    font-family: $font-main;
+    color: $text-color;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+
+
+    .centered-p {
+        padding: 70px 500px;
+        font-family: $font-main;
+        font-size: 22px;
+        font-weight: 400;
+        color: $text-color;
+        text-align: center;
+    }
+
+    .flex-slides-side-text {
+        display: flex;
+        align-items: center;
+        padding: 0px 200px 50px 200px;
+        gap: 20px;
+
+        .index-side-text {
+            text-align: justify;
+            
+            .index-list {
+                li {
+                    font-size: 20px;
+                    position: relative;
+                    padding-left: 1.5em;
+                    margin-bottom: 0.8em;
+
+
+                    &::before {
+                        content: "✦";
+                        position: absolute;
+                        left: 0;
+                        color: $text-color;
+                        font-size: 1.2em;
+                    }
+                }
+                p {
+                    display: inline;
+                    font-size: 20px;
+                    font-weight: normal;
+                }
+
+                h2 {
+                    display: inline;
+                    font-weight: normal;
+                    font-size: 20px;
+                }
+            }
+
+            p {
+                font-weight: 500;
+                font-size: 25px;
+            }
+        }    
+    }
+}

@@ -1,0 +1,86 @@
+.cabin-presentation {
+    background-color: $secondary-color;
+    color: $text-color;
+    padding: 30px 60vw 30px 200px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+
+    h1 {
+        font-family: $font-titles;
+        padding-bottom: 20px;
+    }
+
+    p {
+        font-family: $font-main;
+        font-size: 20px;
+        text-align: justify;
+    }
+}
+
+.cabin-details-container {
+    display: flex;
+    justify-content: center;
+    padding: 0px 200px;
+
+    .cabin-details {
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $text-color;
+    gap: 20px;
+
+        .detail-list {
+            text-align: right;
+            padding-left: 300px;
+
+            h2 {
+                font-family: $font-titles;
+                padding-bottom: 20px;
+            }
+
+            ul {
+                font-family:  $font-main;
+                font-size: 18px;
+                
+                li {
+                    padding: 10px 0;
+                }
+            }
+        }
+
+        .cabin-slides img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+}
+
+.provided-services {
+    padding: 20px 10vw;
+    background-color: $secondary-color;
+    color: white;
+    font-family: $font-main;
+    font-size: 17px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+
+    .services-row {
+        padding: 20px 20px;
+        display: flex;
+        justify-content: space-around;
+
+        .services-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .binoculars {
+                transform: scaleY(-1);
+            }
+
+            .service-icon {
+                font-size: 35px;
+            }
+        }
+    }
+}
