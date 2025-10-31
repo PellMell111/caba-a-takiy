@@ -17,6 +17,19 @@
         align-items: center;
         justify-content: center;
         text-shadow: 0 0 20px rgba(0, 0, 0, 1);
+        
+        // Responsive para móvil
+        @media (max-width: 768px) {
+            font-size: 36px;
+            height: 400px;
+            background-attachment: scroll; // Mejor performance en móvil
+            padding: 0 1rem;
+        }
+        
+        @media (max-width: 480px) {
+            font-size: 28px;
+            height: 300px;
+        }
     }
 }
 
@@ -26,6 +39,21 @@
     text-align: center;
     font-size: 20px;
     padding: 30px 200px;
+    
+    // Responsive para móvil
+    @media (max-width: 1024px) {
+        padding: 30px 100px;
+    }
+    
+    @media (max-width: 768px) {
+        padding: 20px 2rem;
+        font-size: 18px;
+    }
+    
+    @media (max-width: 480px) {
+        padding: 20px 1rem;
+        font-size: 16px;
+    }
 }
 
 .activities-container {
@@ -35,9 +63,32 @@
     padding: 20px 400px;
     text-align: justify;
     font-size: 17px;
+    
+    // Responsive para el contenedor principal
+    @media (max-width: 1440px) {
+        padding: 20px 200px;
+    }
+    
+    @media (max-width: 1024px) {
+        padding: 20px 100px;
+    }
+    
+    @media (max-width: 768px) {
+        padding: 20px 2rem;
+        font-size: 16px;
+    }
+    
+    @media (max-width: 480px) {
+        padding: 20px 1rem;
+        font-size: 15px;
+    }
 
     h2 {
         padding-bottom: 15px;
+        
+        @media (max-width: 768px) {
+            font-size: 1.5rem;
+        }
     }
 
     .activity {
@@ -45,11 +96,33 @@
         margin-top: 20px;
         padding: 15px;
         display: flex;
+        
+        // Responsive para actividades
+        @media (max-width: 768px) {
+            flex-direction: column;
+            padding: 1rem;
+        }
 
         .activity-text {
             display: flex;
             flex-direction: column;
             padding-right: 15px;
+            
+            @media (max-width: 768px) {
+                padding-right: 0;
+                padding-bottom: 15px;
+            }
+        }
+        
+        img {
+            max-width: 300px;
+            height: auto;
+            object-fit: cover;
+            
+            @media (max-width: 768px) {
+                max-width: 100%;
+                width: 100%;
+            }
         }
     }
 
@@ -57,7 +130,10 @@
         background-color: $primary-color;
         margin-top: 20px;
         padding: 15px;
-
+        
+        @media (max-width: 768px) {
+            padding: 1rem;
+        }
 
         .trail-flex {
             display: flex;
@@ -69,10 +145,18 @@
 
             .activity-text {
                 padding-right: 15px;
+                
+                @media (max-width: 768px) {
+                    padding-right: 0;
+                }
             }
 
             h3 {
                 padding-bottom: 15px;
+                
+                @media (max-width: 768px) {
+                    font-size: 1.3rem;
+                }
             }
 
             li {
@@ -83,15 +167,60 @@
         .trail-flex-img {
             display: flex;
             padding-bottom: 15px;
+            
+            // Responsive para trail-flex-img
+            @media (max-width: 768px) {
+                flex-direction: column;
+                
+                &:last-child {
+                    padding-bottom: 0;
+                }
+            }
+            
+            img {
+                max-width: 300px;
+                height: auto;
+                object-fit: cover;
+                
+                @media (max-width: 768px) {
+                    max-width: 100%;
+                    width: 100%;
+                    margin-top: 15px;
+                }
+            }
         }
 
         .activity-text {
             display: flex;
             flex-direction: column;
         }
-
-        
     }
+}
 
-
+// Mejoras adicionales para mejor responsive
+@media (max-width: 768px) {
+    // Mejorar espaciado en móvil
+    .activity, .trails {
+        margin-top: 1rem;
+    }
+    
+    // Asegurar que las imágenes sean responsive
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    // Mejorar legibilidad del texto
+    p, li {
+        line-height: 1.5;
+    }
+    
+    // Mejorar listas en móvil
+    ul {
+        padding-left: 1.5rem;
+    }
+    
+    li {
+        margin-bottom: 0.5rem;
+    }
 }

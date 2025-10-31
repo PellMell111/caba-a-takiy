@@ -17,17 +17,28 @@
     <header>
         <nav class="navbar">
             <div class="navbar-container">
-                <!--Logo (enlace a inicio)-->
+                <!-- Logo -->
                 <a href="../index.html" class="logo">
-                    <img src="../media/imgs/logoTakiy.png" alt="Cabaña Takiy"> <!--Revisar "alt" SEO-->
+                    <img src="../media/imgs/logoTakiy.png" alt="Cabaña Takiy">
                 </a>
-                <!--Links barra de navegación-->
-                <ul class="nav-links">
+                
+                <!-- Menú Hamburguesa -->
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <!-- Links de navegación -->
+                <ul class="nav-links" id="nav-links">
                     <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="cabaña.html">La Cabaña</a></li>
+                    <li><a href="cabaña.html" class="active-link">La Cabaña</a></li>
                     <li><a href="el-lugar.html">El Lugar</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
                 </ul>
+                
+                <!-- Overlay para cerrar menú -->
+                <div class="nav-overlay" id="nav-overlay"></div>
             </div>
         </nav>
     </header>
@@ -55,9 +66,17 @@
                         <li>Estacionamiento</li>
                         <li>Opción de instalar carpa</li>
                     </ul>
+                    <h2 class="precios">Precios 2025 iva incluido</h2>
+                    <ul>
+                        <li>1 noche $75.000 (2 personas)</li>
+                        <li>2 noches $60.000 (2 personas)</li>
+                        <li>3 noches $55.000 (2 personas)</li>
+                        <li>4 noches o más $50.000 (2 personas)</li>
+                    </ul>
                 </div>
-                    <div class="slideshow cabin-slides">
-                        <div class="slide">
+                <div class="slideshow cabin-slides">
+                    <div class="slideshow-container">
+                        <div class="slide active">
                             <img src="../media/imgs/slide-cabin1.JPG" alt="Slide 1">
                         </div>
                         <div class="slide">
@@ -69,9 +88,10 @@
                         <div class="slide">
                             <img src="../media/imgs/slide-cabin4.JPG" alt="Slide 4">
                         </div>
-                        <button class="prev">&#10094;</button>
-                        <button class="next">&#10095;</button>
                     </div>
+                    <button class="prev">&#10094;</button>
+                    <button class="next">&#10095;</button>
+                </div>
             </section>
         </div>
         <div class="provided-services">
@@ -116,7 +136,6 @@
                 </section>
             </section>
             <section class="services-row">
-
                 <section class="services-col">
                     <span class="material-symbols-outlined">local_parking</span>
                     <p>Estacionamiento</p>
@@ -136,7 +155,7 @@
             <div class="opinion-slide">
                 <div class="opinion-text">
                     <p class="opinion-quote">
-                        “La casa de adobe es un cable a tierra; el patio con futón y hamaca nos permitió contemplar los colores del valle. La cocina tenía todo para preparar cualquier plato.”
+                        "La casa de adobe es un cable a tierra; el patio con futón y hamaca nos permitió contemplar los colores del valle. La cocina tenía todo para preparar cualquier plato."
                     </p>
                     <p class="opinion-author">
                         —Damián, 2024
@@ -149,7 +168,7 @@
             <div class="opinion-slide">
                 <div class="opinion-text">
                     <p class="opinion-quote">
-                        “El baño seco fue una revelación: ahorré 40L de agua al día sin perder comodidad.”
+                        "El baño seco fue una revelación: ahorré 40L de agua al día sin perder comodidad."
                     </p>
                     <p class="opinion-author">
                         —Ana, 2023
@@ -162,7 +181,7 @@
             <div class="opinion-slide">
                 <div class="opinion-text">
                     <p class="opinion-quote">
-                        “Ideal para desconectar: un espacio íntimo donde la cocina, el descanso y la terraza conviven en perfecta armonía.”
+                        "Ideal para desconectar: un espacio íntimo donde la cocina, el descanso y la terraza conviven en perfecta armonía."
                     </p>
                     <p class="opinion-author">
                         —Christoph, 2024
@@ -174,7 +193,6 @@
             </div>
             <button class="opinion-next">&#10095;</button>
         </div>
-
     </main>
     <footer>
         <div class="footer-container">

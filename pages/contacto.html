@@ -16,17 +16,28 @@
     <header>
         <nav class="navbar">
             <div class="navbar-container">
-                <!--Logo (enlace a inicio)-->
+                <!-- Logo -->
                 <a href="../index.html" class="logo">
-                    <img src="../media/imgs/logoTakiy.png" alt="Cabaña Takiy"> <!--Revisar "alt" SEO-->
+                    <img src="../media/imgs/logoTakiy.png" alt="Cabaña Takiy">
                 </a>
-                <!--Links barra de navegación-->
-                <ul class="nav-links">
+                
+                <!-- Menú Hamburguesa -->
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <!-- Links de navegación -->
+                <ul class="nav-links" id="nav-links">
                     <li><a href="../index.html">Inicio</a></li>
                     <li><a href="cabaña.html">La Cabaña</a></li>
                     <li><a href="el-lugar.html">El Lugar</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="contacto.html" class="active-link">Contacto</a></li>
                 </ul>
+                
+                <!-- Overlay para cerrar menú -->
+                <div class="nav-overlay" id="nav-overlay"></div>
             </div>
         </nav>
     </header>
@@ -108,5 +119,6 @@
                 </div>
             </div>
         </footer>
+        <script src="../assets/js/main.js"></script>
 </body>
 </html>

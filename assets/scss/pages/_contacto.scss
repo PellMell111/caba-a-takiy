@@ -4,31 +4,126 @@
     background-color: $secondary-color;
     min-height: 800px;
     padding-top: 20px;
+    
+    // Responsive para el layout principal
+    @media (max-width: 1024px) {
+        min-height: 700px;
+    }
+    
+    @media (max-width: 768px) {
+        flex-direction: column;
+        min-height: auto;
+        padding-top: 0;
+    }
 }
 
 .contact-form {
     padding: 50px;
+    width: 700px;
+    margin-bottom: 20px;
     background-color: $primary-color;
     color: $text-color;
     font-family: $font-main;
     font-size: 20px;
+    flex: 1;
+    
+    // Responsive para el formulario
+    @media (max-width: 1024px) {
+        margin-top: 20px;
+        padding: 40px;
+        font-size: 18px;
+    }
+    
+    @media (max-width: 768px) {
+        padding: 30px 2rem;
+        font-size: 16px;
+        order: 2; // Formulario después del mapa en móvil
+    }
+    
+    @media (max-width: 480px) {
+        padding: 25px 1.5rem;
+        font-size: 15px;
+    }
 
     h4 {
         font-family: $font-titles;
         font-size: 40px;
         padding-bottom: 20px;
+        
+        // Responsive para el título
+        @media (max-width: 1024px) {
+            font-size: 32px;
+        }
+        
+        @media (max-width: 768px) {
+            font-size: 28px;
+            text-align: center;
+            padding-bottom: 15px;
+        }
+        
+        @media (max-width: 480px) {
+            font-size: 24px;
+        }
     }
 
     .contact-line {
         margin: 10px 0;
+        
+        @media (max-width: 768px) {
+            margin: 8px 0;
+        }
     }
 
     input {
         padding: 10px 100px;
+        width: 100%;
+        max-width: 400px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        
+        // Responsive para inputs
+        @media (max-width: 1024px) {
+            padding: 10px 80px;
+            max-width: 350px;
+        }
+        
+        @media (max-width: 768px) {
+            padding: 10px 15px;
+            max-width: 100%;
+            font-size: 16px; // Importante para zoom en iOS
+        }
+        
+        @media (max-width: 480px) {
+            padding: 8px 12px;
+        }
     }
 
     textarea {
         padding: 10px 114px;
+        width: 100%;
+        max-width: 400px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        font-family: $font-main;
+        resize: vertical;
+        
+        // Responsive para textarea
+        @media (max-width: 1024px) {
+            padding: 10px 80px;
+            max-width: 350px;
+        }
+        
+        @media (max-width: 768px) {
+            padding: 10px 15px;
+            max-width: 100%;
+            font-size: 16px;
+        }
+        
+        @media (max-width: 480px) {
+            padding: 8px 12px;
+        }
     }
 
     button {
@@ -41,6 +136,66 @@
         padding: 10px 50px;
         border-radius: 5px;
         margin: 0 30px;
+        cursor: pointer;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        
+        &:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+        
+        // Responsive para el botón
+        @media (max-width: 1024px) {
+            font-size: 25px;
+            padding: 10px 40px;
+        }
+        
+        @media (max-width: 768px) {
+            font-size: 22px;
+            padding: 12px 35px;
+            margin: 20px 0 0 0;
+            width: 100%;
+            max-width: 300px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        @media (max-width: 480px) {
+            font-size: 20px;
+            padding: 10px 30px;
+        }
+    }
+    
+    // Mejoras para las etiquetas
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 500;
+        
+        @media (max-width: 768px) {
+            font-size: 16px;
+        }
+    }
+}
+
+.map-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    
+    // Responsive para el contenedor del mapa
+    @media (max-width: 768px) {
+        padding: 2rem;
+        order: 1; // Mapa primero en móvil
+        min-height: 400px;
+    }
+    
+    @media (max-width: 480px) {
+        padding: 1.5rem;
+        min-height: 300px;
     }
 }
 
@@ -49,4 +204,40 @@ iframe {
     width: 1000px;
     height: 659px;
     border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
+    // Responsive para el iframe del mapa
+    @media (max-width: 1440px) {
+        width: 800px;
+        height: 500px;
+        margin-right: 30px;
+    }
+    
+    @media (max-width: 1024px) {
+        width: 600px;
+        height: 400px;
+        margin-right: 20px;
+    }
+    
+    @media (max-width: 768px) {
+        width: 100%;
+        height: 350px;
+        margin-right: 0;
+    }
+    
+    @media (max-width: 480px) {
+        height: 300px;
+    }
+}
+
+// Mejoras adicionales para el formulario en móvil
+@media (max-width: 768px) {
+    .contact-form div {
+        margin-bottom: 1rem;
+    }
+    
+    input, textarea {
+        box-sizing: border-box; // Asegura que el padding no afecte el ancho
+    }
 }

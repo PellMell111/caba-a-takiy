@@ -21,11 +21,39 @@
         color: $text-color;
         text-shadow: 0 0 20px rgba(0, 0, 0, 1);
         margin: 0;
+        
+        // Responsive para tablet
+        @media (max-width: 1024px) {
+            font-size: 2rem;
+        }
+        
+        // Responsive para móvil
+        @media (max-width: 768px) {
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        
+        @media (max-width: 480px) {
+            font-size: 1.3rem;
+            padding: 0 1rem;
+        }
     }
 
+    // Responsive general
+    @media (max-width: 1024px) {
+        height: 60vh;
+        padding: 1.5rem;
+    }
+    
     @media (max-width: 768px) {
         background-attachment: scroll;
-        height: 70vh;
+        height: 50vh;
+        align-items: center;
+        padding: 1rem;
+    }
+    
+    @media (max-width: 480px) {
+        height: 40vh;
     }
 }
 
@@ -35,7 +63,11 @@
     font-family: $font-main;
     color: $text-color;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-
+    
+    // Responsive para márgenes
+    @media (max-width: 768px) {
+        margin-top: 50px;
+    }
 
     .centered-p {
         padding: 70px 500px;
@@ -44,16 +76,80 @@
         font-weight: 400;
         color: $text-color;
         text-align: center;
+        
+        // Responsive progresivo para el padding
+        @media (max-width: 1440px) {
+            padding: 70px 300px;
+        }
+        
+        @media (max-width: 1024px) {
+            padding: 50px 150px;
+            font-size: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            padding: 40px 4rem;
+            font-size: 18px;
+        }
+        
+        @media (max-width: 480px) {
+            padding: 30px 1.5rem;
+            font-size: 16px;
+            line-height: 1.5;
+        }
     }
 
     .flex-slides-side-text {
         display: flex;
-        align-items: center;
+        align-items: flex-start; // Cambié de center a flex-start para mejor alineación
         padding: 0px 200px 50px 200px;
         gap: 20px;
+        
+        // Responsive para el layout flex
+        @media (max-width: 1200px) {
+            padding: 0px 100px 50px 100px;
+        }
+        
+        @media (max-width: 768px) {
+            flex-direction: column;
+            padding: 0px 2rem 40px 2rem;
+            gap: 30px;
+        }
+        
+        @media (max-width: 480px) {
+            padding: 0px 1rem 30px 1rem;
+            gap: 25px;
+        }
+
+        // Estilos para el slideshow (debes agregar estos si no los tienes)
+        .slideshow {
+            flex: 1;
+            position: relative;
+            
+            @media (max-width: 768px) {
+                width: 100%;
+                order: 1; // El slideshow primero en móvil
+            }
+            
+            img {
+                max-width: 100%;
+                height: auto;
+                display: block;
+            }
+        }
 
         .index-side-text {
+            flex: 1;
             text-align: justify;
+
+            
+            @media (max-width: 768px) {
+                width: 100%;
+                order: 2; // El texto después en móvil
+                text-align: left; // Mejor legibilidad en móvil
+                background-color: $primary-color;
+                padding: 15px 10px 15px 0;
+            }
             
             .index-list {
                 li {
@@ -61,7 +157,18 @@
                     position: relative;
                     padding-left: 1.5em;
                     margin-bottom: 0.8em;
-
+                    
+                    // Responsive para la lista
+                    @media (max-width: 1024px) {
+                        font-size: 18px;
+                    }
+                    
+                    @media (max-width: 768px) {
+                        font-size: 16px;
+                        padding-left: 1.2em;
+                        margin-bottom: 1em;
+                        line-height: 1.4;
+                    }
 
                     &::before {
                         content: "✦";
@@ -69,25 +176,105 @@
                         left: 0;
                         color: $text-color;
                         font-size: 1.2em;
+                        
+                        @media (max-width: 768px) {
+                            font-size: 1em;
+                        }
                     }
                 }
+                
                 p {
                     display: inline;
                     font-size: 20px;
                     font-weight: normal;
+                    
+                    @media (max-width: 1024px) {
+                        font-size: 18px;
+                    }
+                    
+                    @media (max-width: 768px) {
+                        font-size: 16px;
+                    }
                 }
 
                 h2 {
                     display: inline;
                     font-weight: normal;
                     font-size: 20px;
+                    
+                    @media (max-width: 1024px) {
+                        font-size: 18px;
+                    }
+                    
+                    @media (max-width: 768px) {
+                        font-size: 16px;
+                        display: block; // Mejor en móvil que sea bloque
+                        margin-bottom: 0.3em;
+                        font-weight: 600; // Un poco más de peso para mejor jerarquía
+                    }
                 }
             }
 
             p {
                 font-weight: 500;
                 font-size: 25px;
+                
+                // Responsive para el párrafo final
+                @media (max-width: 1024px) {
+                    font-size: 22px;
+                }
+                
+                @media (max-width: 768px) {
+                    font-size: 18px;
+                    text-align: center; // Centrado en móvil para destacar
+                    line-height: 1.5;
+                }
+                
+                @media (max-width: 480px) {
+                    font-size: 16px;
+                }
             }
         }    
     }
+}
+
+// Estilos adicionales para el slideshow responsive (si no los tienes)
+.slideshow {
+    position: relative;
+    max-width: 100%;
+    
+    .slide {
+        
+        
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+    }
+    
+    .prev, .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0,0,0,0.5);
+        color: white;
+        border: none;
+        padding: 1rem;
+        cursor: pointer;
+        font-size: 1.5rem;
+        
+        @media (max-width: 768px) {
+            padding: 0.8rem;
+            font-size: 1.2rem;
+        }
+        
+        @media (max-width: 480px) {
+            padding: 0.6rem;
+            font-size: 1rem;
+        }
+    }
+    
+    .prev { left: 10px; }
+    .next { right: 10px; }
 }

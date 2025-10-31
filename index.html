@@ -13,21 +13,31 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-
     <header>
         <nav class="navbar">
             <div class="navbar-container">
-                <!--Logo (enlace a inicio)-->
+                <!-- Logo -->
                 <a href="index.html" class="logo">
-                    <img src="media/imgs/logoTakiy.png" alt="Cabaña Takiy"> <!--Revisar "alt" SEO-->
+                    <img src="media/imgs/logoTakiy.png" alt="Cabaña Takiy">
                 </a>
-                <!--Links barra de navegación-->
-                <ul class="nav-links">
-                    <li><a href="index.html">Inicio</a></li>
+                
+                <!-- Menú Hamburguesa -->
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <!-- Links de navegación -->
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html" class="active-link">Inicio</a></li>
                     <li><a href="pages/cabaña.html">La Cabaña</a></li>
                     <li><a href="pages/el-lugar.html">El Lugar</a></li>
                     <li><a href="pages/contacto.html">Contacto</a></li>
                 </ul>
+                
+                <!-- Overlay para cerrar menú -->
+                <div class="nav-overlay" id="nav-overlay"></div>
             </div>
         </nav>
     </header>
@@ -44,23 +54,25 @@
             </p>
             <div class="flex-slides-side-text">
                 <div class="slideshow index-slides">
-                    <div class="slide">
-                        <img src="media/imgs/slide-index1.JPG" alt="Slide 1">
-                    </div>
-                    <div class="slide">
-                        <img src="media/imgs/slide-index2.JPG" alt="Slide 2">
-                    </div>
-                    <div class="slide">
-                        <img src="media/imgs/slide-index3.JPG" alt="Slide 3">
-                    </div>
-                    <div class="slide">
-                        <img src="media/imgs/slide-index4.JPG" alt="Slide 4">
-                    </div>
-                    <div class="slide">
-                        <img src="media/imgs/slide-index5.JPG" alt="Slide 5">
-                    </div>
-                    <div class="slide">
-                        <img src="media/imgs/slide-index6.JPG" alt="Slide 6">
+                    <div class="slideshow-container">
+                        <div class="slide active">
+                            <img src="media/imgs/slide-index1.JPG" alt="Slide 1">
+                        </div>
+                        <div class="slide">
+                            <img src="media/imgs/slide-index2.JPG" alt="Slide 2">
+                        </div>
+                        <div class="slide">
+                            <img src="media/imgs/slide-index3.JPG" alt="Slide 3">
+                        </div>
+                        <div class="slide">
+                            <img src="media/imgs/slide-index4.JPG" alt="Slide 4">
+                        </div>
+                        <div class="slide">
+                            <img src="media/imgs/slide-index5.JPG" alt="Slide 5">
+                        </div>
+                        <div class="slide">
+                            <img src="media/imgs/slide-index6.JPG" alt="Slide 6">
+                        </div>
                     </div>
                     <button class="prev">&#10094;</button>
                     <button class="next">&#10095;</button>

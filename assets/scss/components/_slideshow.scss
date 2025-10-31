@@ -5,16 +5,26 @@
     overflow: hidden;
 }
 
-.slide {
-    display: none;
-    img {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
+.slideshow-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
 }
 
-.slide:first-child {
+.slide {
+    min-width: 100%;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+    position: relative;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
     display: block;
 }
 
@@ -29,6 +39,7 @@
     cursor: pointer;
     font-size: 18px;
     transition: background-color 0.3s;
+    z-index: 10;
 }
 
 .prev {
