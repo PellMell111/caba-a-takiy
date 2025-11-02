@@ -69,8 +69,20 @@
 
 // ========== VISTA MÓVIL ==========
 @media (max-width: 768px) {
+    header {
+        position: relative;
+        z-index: 1;
+    }
+
+    .navbar {
+        position: relative;
+        z-index: 1;
+    }
+
     .navbar-container {
         padding: 0 1rem;
+        position: relative;
+        z-index: 1;
     }
 
     // MOSTRAR HAMBURGUESA
@@ -94,58 +106,69 @@
         }
     }
 
-    // OCULTAR NAV-LINKS ORIGINAL Y CREAR MENÚ MÓVIL
+    // Logo - SIN z-index
+    .logo img {
+        width: 100px;
+        transition: transform 0.3s ease;
+    }
+
+    // MENÚ MÓVIL - POSICIÓN FIJA CON z-index ALTO
     .nav-links {
-        // Primero ocultamos el menú desktop
-        display: none;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: $primary-color;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1.5rem;
+        padding-top: 80px;
+        margin: 0;
+        z-index: 1000;
+        box-shadow: -2px 0 15px rgba(0, 0, 0, 0.2);
+        transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         
-        // Estilos para cuando está activo (menú móvil abierto)
         &.active {
-            display: flex;
-            position: fixed;
-            top: 0;
             right: 0;
-            width: 70%;
-            max-width: 300px;
-            height: 100vh;
-            background-color: $primary-color;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            gap: 1.5rem;
-            padding-top: 80px;
-            margin: 0;
-            z-index: 1000;
-            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        li {
+            width: 100%;
+            text-align: center;
+            opacity: 0;
+            transform: translateX(20px);
+            transition: all 0.4s ease;
             
-            li {
-                width: 100%;
-                text-align: center;
-            }
+            &:nth-child(1) { transition-delay: 0.05s; }
+            &:nth-child(2) { transition-delay: 0.1s; }
+            &:nth-child(3) { transition-delay: 0.15s; }
+            &:nth-child(4) { transition-delay: 0.2s; }
+        }
+        
+        &.active li {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        a {
+            display: block;
+            padding: 1rem 0;
+            font-size: 1.1rem;
+            width: 100%;
+            transition: all 0.3s ease;
             
-            a {
-                display: block;
-                padding: 1rem 0;
-                font-size: 1.1rem;
-                width: 100%;
-                
-                &:hover {
-                    background-color: rgba(255, 255, 255, 0.1);
-                }
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+                transform: translateX(5px);
             }
         }
     }
 
-    // Logo más pequeño en móvil
-    .logo img {
-        width: 100px;
-        position: relative;
-        z-index: 1001;
-    }
-    
-    // Overlay de fondo cuando el menú está abierto
+    // Overlay
     .nav-overlay {
-        display: none;
         position: fixed;
         top: 0;
         left: 0;
@@ -153,9 +176,17 @@
         height: 100%;
         background-color: rgba(0, 0, 0, 0.5);
         z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
         
         &.active {
-            display: block;
+            opacity: 1;
+            visibility: visible;
         }
+    }
+    
+    .navbar.active .logo img {
+        transform: scale(0.95);
     }
 }
